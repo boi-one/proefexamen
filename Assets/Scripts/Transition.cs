@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,7 @@ bool test2 = false;
         reference = this;
         transitionScreen = GetComponent<Image>();
         CoverScreen();
+        transitionEvent += TEST;
     }
 
     void Update()
@@ -57,12 +59,17 @@ bool test2 = false;
             transitioning = true;
             waitTime += Time.time;
             transitionEvent();
+            foreach (Delegate d in transitionEvent.GetInvocationList()) transitionEvent -= (TransitionEvent)d;
+            transitionEvent = () => { };
+            transitionEvent();
         }
         if (Time.time > waitTime && transitioning)
         {
             FadeOut(speed);
         }
     }
+
+    void TEST() => Debug.Log("TEST");
 
     void OnRectTransformDimensionsChange()
     {
