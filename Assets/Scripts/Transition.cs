@@ -8,12 +8,12 @@ public class Transition : MonoBehaviour
     Image transitionScreen;
     float alpha = 0;
     bool transitioning = false;
-    public Transform test;
+    bool startTransition = false;
     public delegate void TransitionEvent();
     public TransitionEvent transitionEvent = () => { };
 
 
-bool test2 = false;
+    bool test2 = false;
 
     void Awake()
     {
@@ -26,12 +26,19 @@ bool test2 = false;
     void Update()
     {
         transitionScreen.color = new Vector4(0, 0, 0, alpha);
-        
-        TransitionFade();
-        if(alpha >= 1) test.position = new Vector3(test.position.x, 10);
 
-        if (Input.GetKeyDown(KeyCode.Space)) test2 = true;
-        if (test2) TransitionFade();
+        if (startTransition)
+        {
+            TransitionFade();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)) StartTransition();
+    }
+
+    public void StartTransition()
+    {
+        startTransition = true;
+        transitioning = false;
     }
 
     void CoverScreen()
@@ -45,7 +52,7 @@ bool test2 = false;
     {
         if (alpha < 1) alpha += 0.1f * (speed * Time.deltaTime);
     }
-    
+
     void FadeOut(float speed = 1f)
     {
         if (alpha > 0) alpha -= 0.1f * (speed * Time.deltaTime);
@@ -53,7 +60,7 @@ bool test2 = false;
 
     public void TransitionFade(float speed = 3f, float waitTime = 3f)
     {
-        if(!transitioning) FadeIn(speed);
+        if (!transitioning) FadeIn(speed);
         if (alpha >= 1 && !transitioning)
         {
             transitioning = true;
@@ -61,7 +68,6 @@ bool test2 = false;
             transitionEvent();
             foreach (Delegate d in transitionEvent.GetInvocationList()) transitionEvent -= (TransitionEvent)d;
             transitionEvent = () => { };
-            transitionEvent();
         }
         if (Time.time > waitTime && transitioning)
         {
