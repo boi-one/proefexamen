@@ -31,8 +31,6 @@ public class Transition : MonoBehaviour
         {
             TransitionFade();
         }
-
-        if (Input.GetKeyDown(KeyCode.Space)) StartTransition();
     }
 
     public void StartTransition()
