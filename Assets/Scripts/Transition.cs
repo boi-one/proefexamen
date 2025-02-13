@@ -12,6 +12,9 @@ public class Transition : MonoBehaviour
     public delegate void TransitionEvent();
     public TransitionEvent transitionEvent = () => { };
 
+    float transitionSpeed = 0;
+    float waitTime = 0;
+
 
     bool test2 = false;
 
@@ -29,12 +32,15 @@ public class Transition : MonoBehaviour
 
         if (startTransition)
         {
-            TransitionFade();
+            TransitionFade(transitionSpeed, waitTime);
         }
     }
 
-    public void StartTransition()
+    public void StartTransition(float transitionSpeed = 3f, float waitTime = 3f)
     {
+        this.transitionSpeed = transitionSpeed;
+        this.waitTime = waitTime;
+
         startTransition = true;
         transitioning = false;
     }
