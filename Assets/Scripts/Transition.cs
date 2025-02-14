@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,7 @@ public class Transition : MonoBehaviour
     float alpha = 0;
     bool transitioning = false;
     bool startTransition = false;
-    public delegate void TransitionEvent();
-    public TransitionEvent transitionEvent = () => { };
+    Action transitionEvent = () => { };
 
     float transitionSpeed = 0;
     float waitTime = 0;
@@ -23,7 +23,6 @@ public class Transition : MonoBehaviour
         reference = this;
         transitionScreen = GetComponent<Image>();
         CoverScreen();
-        transitionEvent += TEST;
     }
 
     void Update()
@@ -45,9 +44,13 @@ public class Transition : MonoBehaviour
         transitioning = false;
     }
 
+    public void AddFunctions(List<Action> functions)
+    {
+        foreach (Action a in functions) transitionEvent += a;
+    }
+
     void CoverScreen()
     {
-        if (!transitionScreen) return;
         transitionScreen.transform.position = new Vector2(Screen.width / 2, Screen.height / 2);
         GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
     }
@@ -70,8 +73,6 @@ public class Transition : MonoBehaviour
             transitioning = true;
             waitTime += Time.time;
             transitionEvent();
-            foreach (Delegate d in transitionEvent.GetInvocationList()) transitionEvent -= (TransitionEvent)d;
-            transitionEvent = () => { };
         }
         if (Time.time > waitTime && transitioning)
         {
