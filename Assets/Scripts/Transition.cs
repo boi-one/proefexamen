@@ -44,9 +44,16 @@ public class Transition : MonoBehaviour
         transitioning = false;
     }
 
-    public void AddFunctions(List<Action> functions)
+    public void AddFunction(Action function)
     {
-        foreach (Action a in functions) transitionEvent += a;
+        void Temp()
+        {
+            transitionEvent -= Temp;
+
+            function.Invoke();
+        }
+
+        transitionEvent += Temp;
     }
 
     void CoverScreen()
