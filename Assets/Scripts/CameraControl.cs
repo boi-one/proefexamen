@@ -1,15 +1,18 @@
 using System;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 
 public class CameraControl : Interaction
 {
-    Vector3 defaultCamPos = new Vector3(0, 1, -10);
     public static Transform pivotPoint;
     bool boolCheck = true;
+    
+    float pitch = 0;
+    float yaw = 0;
     
     float timer = 0;
     [SerializeField]
@@ -40,20 +43,20 @@ public class CameraControl : Interaction
 
     void CameraPivot()
     {
+        // if (!transform.parent)
+        // {
+        //     pivotPoint.eulerAngles = new Vector3(0, 0, 0);
+        //     transform.eulerAngles = new Vector3(0, 0, 0);
+        // } fix this shit tuesday
         transform.parent = pivotPoint;
-        // transform.eulerAngles = new Vector3(0, 0, 0);
         transform.position = pivotPoint ? pivotPoint.position - pivotPoint.forward * zoom : new Vector3(0,0,-1) * zoom;
-        
-        if (Input.GetMouseButton(1))
-            /*transform.parent.rotation = Quaternion.RotateTowards(transform.parent.rotation, 
-                Quaternion.Euler(-Input.mousePositionDelta.y, Input.mousePositionDelta.x, 0),
-                50);*/
-
-            // transform.parent.rotation = Quaternion.Euler(transform.parent.eulerAngles +
-            //                                          new Vector3(-Input.mousePositionDelta.y,
-            //                                              Input.mousePositionDelta.x, 0));
-
-
-            transform.parent.eulerAngles += new Vector3(-Input.mousePositionDelta.y, Input.mousePositionDelta.x, 0);
+        if (Input.GetMouseButton(1) && transform.parent != null)
+        {
+            Mathf.Clamp(pitch, -90, 90);
+            Mathf.Clamp(yaw, -90, 90);
+            pitch += -Input.mousePositionDelta.y;
+            yaw += Input.mousePositionDelta.x;
+            transform.parent.rotation = Quaternion.Euler(pitch, yaw, 0);
+        }
     }
 }
