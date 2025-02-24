@@ -6,17 +6,13 @@ using UnityEngine.UI;
 public class Transition : MonoBehaviour
 {
     public static Transition reference;
-    Image transitionScreen;
-    float alpha = 0;
-    bool transitioning = false;
-    bool startTransition = false;
-    Action transitionEvent = () => { };
-
-    float transitionSpeed = 0;
-    float waitTime = 0;
-
-
-    bool test2 = false;
+    Image         transitionScreen;
+    float         alpha = 0;
+    bool          transitioning = false;
+    bool          startTransition = false;
+    Action        transitionEvent = () => { };
+    float         transitionSpeed = 0;
+    float         waitTime = 0;
 
     void Awake()
     {
@@ -86,8 +82,6 @@ public class Transition : MonoBehaviour
             FadeOut(speed);
         }
     }
-
-    void TEST() => Debug.Log("TEST");
 
     void OnRectTransformDimensionsChange()
     {
