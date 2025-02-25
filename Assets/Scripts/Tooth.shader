@@ -11,6 +11,7 @@ Shader "CUSTOM/Tooth"
     {
         Tags { "RenderType"="Opaque" }
         LOD 100
+        Blend SrcAlpha OneMinusSrcAlpha
 
         Pass
         {

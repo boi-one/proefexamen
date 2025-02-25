@@ -13,7 +13,7 @@ public class Affliction
         {
             if (_amount == value)
                 return;
-            
+
             value = Mathf.Clamp(value, 0f, 1f);
             _amount = value;
 
@@ -27,6 +27,9 @@ public class Affliction
                     break;
             }
         }
-    } float _amount;
+    }
+    [SerializeField, Range(0, 1)]
+    float _amount;
     public UnityEvent OnAdded, OnRemoved;
+    public Material material;
 }
