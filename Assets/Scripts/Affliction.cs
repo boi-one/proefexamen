@@ -2,10 +2,17 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum AfflictionType
+{
+    dirt,
+    blood,
+    hole
+}
+
 [Serializable]
 public class Affliction
 {
-    public string Name;
+    public AfflictionType Name;
     public float Amount
     {
         get => _amount;
@@ -26,7 +33,7 @@ public class Affliction
                     OnRemoved.Invoke();
                     break;
             }
-        }
+        } 
     }
     [SerializeField, Range(0, 1)]
     float _amount;

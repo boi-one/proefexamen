@@ -30,6 +30,8 @@ public class Tool : MonoBehaviour
 
     public Transform interactPoint;
 
+    public AfflictionType affliction;
+
     void Update()
     {
         if (!IsSelected) 
