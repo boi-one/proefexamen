@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-using UnityEngine;
-
-public class Affliction : MonoBehaviour
-{
-    Material material;
-    [SerializeField, Range(0, 1)]
-    float dirtyness = 1;
-    void Awake()
-    {
-        material = GetComponent<MeshRenderer>().material;
-    }
-
-    void Update()
-    {
-        material.SetFloat("_Dirtyness", Mathf.Clamp(dirtyness, 0, 1));
-    }
-}
-=======
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -49,4 +30,3 @@ public class Affliction
     } float _amount;
     public UnityEvent OnAdded, OnRemoved;
 }
->>>>>>> tools
