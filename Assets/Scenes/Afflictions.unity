@@ -133,15 +133,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 601936131278800843, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0].Name
-      value: Dirt
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 601936131278800843, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[1].Name
-      value: Blood
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 601936131278800843, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[2].Name
-      value: Temp
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 601936131278800843, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0]._amount
@@ -173,15 +173,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131812471249114965, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0].Name
-      value: Dirt
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1131812471249114965, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[1].Name
-      value: Blood
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1131812471249114965, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[2].Name
-      value: Temp
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1131812471249114965, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0]._amount
@@ -257,15 +257,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2036004190538163178, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0].Name
-      value: Dirt
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2036004190538163178, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[1].Name
-      value: Blood
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2036004190538163178, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[2].Name
-      value: Temp
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2036004190538163178, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0]._amount
@@ -297,15 +297,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2147442309250973106, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0].Name
-      value: Dirt
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2147442309250973106, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[1].Name
-      value: Blood
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2147442309250973106, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[2].Name
-      value: Temp
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2147442309250973106, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0]._amount
@@ -337,15 +337,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2574150648919053261, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0].Name
-      value: Dirt
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2574150648919053261, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[1].Name
-      value: Blood
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2574150648919053261, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[2].Name
-      value: Temp
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2574150648919053261, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0]._amount
@@ -377,15 +377,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196766275850558652, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0].Name
-      value: Dirt
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5196766275850558652, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[1].Name
-      value: Blood
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5196766275850558652, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[2].Name
-      value: Temp
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5196766275850558652, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0]._amount
@@ -417,15 +417,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7396036993572274991, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0].Name
-      value: Dirt
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7396036993572274991, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[1].Name
-      value: Blood
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7396036993572274991, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[2].Name
-      value: Temp
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7396036993572274991, guid: 3fa5b9ac97b5f0c42ba8795722ba63c9, type: 3}
       propertyPath: Afflictions.Array.data[0]._amount
