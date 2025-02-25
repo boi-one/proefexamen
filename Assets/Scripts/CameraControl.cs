@@ -24,9 +24,7 @@ public class CameraControl : Interaction
             value = Mathf.Clamp(value, 1f, 10f);
             _positionValue = value;
         }
-    }
-
-    float _positionValue;
+    } float _positionValue;
     
     void Update()
     {
