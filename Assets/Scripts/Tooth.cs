@@ -24,6 +24,10 @@ public class Tooth : Part
 
     void Clean(AfflictionType toolType)
     {
-        foreach (var affliction in Afflictions) if (affliction.Name == toolType) affliction.Amount -= 0.1f;
+        foreach (var affliction in Afflictions) if (affliction.Name == toolType)
+            {
+                affliction.Amount -= 0.1f;
+                break;
+            }
     }
 }
