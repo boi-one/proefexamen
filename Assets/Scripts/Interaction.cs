@@ -18,7 +18,7 @@ public class Interaction : MonoBehaviour
         if (!Input.GetMouseButtonDown(0))
             return;
         
-        var screenToWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, 0.1f));
+        var screenToWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition + new(0, 0, 0.1f));
         Physics.Raycast(screenToWorldPoint, (screenToWorldPoint - Camera.main.transform.position).normalized, out hit);
         CameraControl.pivotPoint = hit.transform?.GetComponentInChildren<Tooth>() ? hit.transform.Find("Pivot") : null;
         
