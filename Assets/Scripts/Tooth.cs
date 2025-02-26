@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -10,7 +11,11 @@ public class Tooth : Part
     public void Awake()
     {
         List<Material> toothAfflicions = new List<Material>();
-        foreach (var affliction in Afflictions) toothAfflicions.Add(affliction.material);
+        foreach (var affliction in Afflictions)
+        {
+            toothAfflicions.Add(affliction.material);
+            affliction.Amount = Random.Range(0.0f, 1.0f);
+        }
         transform.GetChild(0).GetComponent<MeshRenderer>().SetMaterials(toothAfflicions);
     }
 

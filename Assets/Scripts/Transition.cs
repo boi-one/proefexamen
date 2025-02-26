@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class Transition : MonoBehaviour
 {
     public static Transition reference;
-    Image         transitionScreen;
-    float         alpha = 0;
-    bool          transitioning = false;
-    bool          startTransition = false;
-    Action        transitionEvent = () => { };
-    float         transitionSpeed = 0;
-    float         waitTime = 0;
+    Image transitionScreen;
+    float alpha = 0;
+    bool transitioning = false;
+    bool startTransition = false;
+    Action transitionEvent = () => { };
+    float transitionSpeed = 0;
+    float waitTime = 0;
 
     void Awake()
     {
