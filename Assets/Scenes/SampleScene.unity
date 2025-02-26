@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d55caae64c96a46b9e3294a369a5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyMultiplier: 1
+  difficultyMultiplier: 3
   teeth:
   - {fileID: 108929431}
   - {fileID: 1574859779}

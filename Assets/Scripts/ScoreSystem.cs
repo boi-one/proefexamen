@@ -20,7 +20,7 @@ public class ScoreSystem : MonoBehaviour
     
     [SerializeField]
     int difficultyMultiplier = 1;
-    float scoreTimer => _scoreTimer -= Time.deltaTime / difficultyMultiplier;
+    float scoreTimer => _scoreTimer -= Time.deltaTime / difficultyMultiplier / 2;
     float _scoreTimer = 100;
     float progress;
     
@@ -38,6 +38,6 @@ public class ScoreSystem : MonoBehaviour
         progress = teeth.Count(_ => _.GetComponent<Tooth>().clean) / (float)teeth.Count;
         scoreText.text = scoreTimer > 0 ? ((int)(difficultyMultiplier * scoreTimer)).ToString() : invokeNoTimeLeft();
         progressBar.value = progress;
-        new Action(progress == 1 ? () => Win.Invoke() : () => { }).Invoke();
+        new Action(progress == 1 ? (Action)(() => Win.Invoke()) : () => { }).Invoke();
     }
 }
