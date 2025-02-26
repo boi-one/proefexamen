@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Tooth : MonoBehaviour
 {
-    
+    public bool clean = false;
 }
