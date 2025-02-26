@@ -26,8 +26,10 @@ public class ScoreSystem : MonoBehaviour
     
     [SerializeField]
     List<Transform> teeth = new();
-    Text scoreText => GetComponentInChildren<Text>();
-    Slider progressBar => GetComponentInChildren<Slider>();
+    Text scoreText => _scoreText ??= GetComponentInChildren<Text>();
+    Text _scoreText;
+    Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>();
+    Slider _progressBar;
 
     #endregion
 
