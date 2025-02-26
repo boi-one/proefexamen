@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class CameraControl : Interaction
 {
+    #region Variables
+    
     public static Transform pivotPoint;
     
     float pitch = 0;
@@ -25,6 +27,8 @@ public class CameraControl : Interaction
             _positionValue = value;
         }
     } float _positionValue;
+    
+    #endregion
     
     void Update()
     {
