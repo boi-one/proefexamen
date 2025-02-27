@@ -11,12 +11,8 @@ public class Transition : MonoBehaviour
     bool transitioning = false;
     bool startTransition = false;
     Action transitionEvent = () => { };
-
     float transitionSpeed = 0;
     float waitTime = 0;
-
-
-    bool test2 = false;
 
     void Awake()
     {
@@ -86,8 +82,6 @@ public class Transition : MonoBehaviour
             FadeOut(speed);
         }
     }
-
-    void TEST() => Debug.Log("TEST");
 
     void OnRectTransformDimensionsChange()
     {
