@@ -1,9 +1,4 @@
-using System;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
 
 
 public class CameraControl : Interaction
@@ -14,7 +9,6 @@ public class CameraControl : Interaction
     
     float pitch = 0;
     float yaw = 0;
-    float timer = 0;
     
     [SerializeField]
     float zoomAmount;
