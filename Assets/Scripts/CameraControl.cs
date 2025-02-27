@@ -49,7 +49,7 @@ public class CameraControl : Interaction
         }
         
         transform.parent = pivotPoint;
-        transform.position = pivotPoint ? pivotPoint.position - pivotPoint.forward * zoom : new(0,0,-1) * zoom;
+        transform.position = pivotPoint ? pivotPoint.position - pivotPoint.forward * zoom : new Vector3(0,0,-1) * zoom;
         if (Input.GetMouseButton(1) && transform.parent)
         {
             Mathf.Clamp(pitch, -90, 90);
