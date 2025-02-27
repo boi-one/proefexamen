@@ -1,7 +1,9 @@
-# VoorbeeldExamenRepo
-Een voorbeeld repository voor het examenwerk
+# Mr. Clean!
+The most awesomest monster dentist simulator!
 
-In deze repository vind je de informatie over het examen project.
+In this repository you'll find all of the information about our teams' working process for this awesome project.
+
+# WIP
 
 Omschrijf de examenopdracht evt de klant en wat het doel voor de klant is.
 Omschrijf ook beknopt wat het idee van je game is. 
