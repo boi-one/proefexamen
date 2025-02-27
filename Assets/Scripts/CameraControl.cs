@@ -1,11 +1,12 @@
 using UnityEngine;
 public class CameraControl : Interaction
 {
+    #region Variables
+    
     public static Transform pivotPoint;
     
     float pitch = 0;
     float yaw = 0;
-    float timer = 0;
     
     [SerializeField]
     float zoomAmount;
@@ -17,9 +18,9 @@ public class CameraControl : Interaction
             value = Mathf.Clamp(value, 1f, 10f);
             _positionValue = value;
         }
-    }
-
-    float _positionValue;
+    } float _positionValue;
+    
+    #endregion
     
     void Update()
     {
