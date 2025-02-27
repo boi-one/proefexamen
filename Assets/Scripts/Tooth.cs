@@ -17,7 +17,7 @@ public class Tooth : Part
         foreach (var affliction in Afflictions)
         {
             toothAfflicions.Add(affliction.material);
-            affliction.Amount = Random.Range(0.0f, 1.0f);
+            affliction.Amount = UnityEngine.Random.Range(0.0f, 1.0f);
         }
         transform.GetChild(0).GetComponent<MeshRenderer>().SetMaterials(toothAfflicions);
         meshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
