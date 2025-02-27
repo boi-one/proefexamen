@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -37,7 +35,7 @@ public class ScoreSystem : MonoBehaviour
 
     void ScoreManager()
     {
-        //progress = teeth.Count(_ => _.GetComponent<Tooth>().clean) / (float)teeth.Count;
+        progress = Patient.refer.Parts.Count(_ => _.GetComponent<Tooth>().clean) / (float)Patient.refer.Parts.Length;
         scoreText.text = scoreTimer > 0 ? ((int)(difficultyMultiplier * scoreTimer)).ToString() : invokeNoTimeLeft();
         progressBar.value = progress;
         new Action(progress == 1 ? (Action)(() => Win.Invoke()) : () => { }).Invoke();
