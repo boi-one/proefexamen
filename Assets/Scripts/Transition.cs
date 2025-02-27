@@ -25,12 +25,6 @@ public class Transition : MonoBehaviour
     {
         transitionScreen.color = new Vector4(0, 0, 0, alpha);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddFunction(() => Debug.Log("transition"));
-            StartTransition();
-        }
-
         if (startTransition)
         {
             TransitionFade(transitionSpeed, waitTime);
