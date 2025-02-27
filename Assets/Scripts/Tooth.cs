@@ -2,6 +2,8 @@ using NUnit.Framework.Internal;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using System;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class Tooth : Part
@@ -36,3 +38,4 @@ public class Tooth : Part
             affliction.Amount -= decreaseAmount;
     }
 }
+
