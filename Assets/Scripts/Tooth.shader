@@ -9,7 +9,7 @@ Shader "CUSTOM/Tooth"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Transparent" }
         LOD 100
         Blend SrcAlpha OneMinusSrcAlpha
 
@@ -45,7 +45,7 @@ Shader "CUSTOM/Tooth"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = v.uv;
                 return o;
-            }
+            }   
 
             fixed4 frag (v2f i) : SV_Target
             {

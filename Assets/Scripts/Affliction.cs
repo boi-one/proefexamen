@@ -12,7 +12,7 @@ public enum AfflictionType
 [Serializable]
 public class Affliction
 {
-    public AfflictionType Name;
+    public AfflictionType Type;
     public float Amount
     {
         get => _amount;
