@@ -82,10 +82,4 @@ public class Transition : MonoBehaviour
             FadeOut(speed);
         }
     }
-
-    void OnRectTransformDimensionsChange()
-    {
-        CoverScreen();
-    }
-
 }
