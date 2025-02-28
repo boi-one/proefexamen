@@ -37,7 +37,7 @@ public class ScoreSystem : MonoBehaviour
 
     void ScoreManager()
     {
-        //progress = teeth.Count(_ => _.GetComponent<Tooth>().clean) / (float)teeth.Count;
+        progress = Patient.instance.Parts.Count(_ => _.GetComponent<Tooth>().clean) / (float)Patient.instance.Parts.Length;
         scoreText.text = scoreTimer > 0 ? ((int)(difficultyMultiplier * scoreTimer)).ToString() : invokeNoTimeLeft();
         progressBar.value = progress;
         new Action(progress == 1 ? (Action)(() => Win.Invoke()) : () => { }).Invoke();
