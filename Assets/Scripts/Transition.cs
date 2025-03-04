@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Make sure the Transition script is applied to a canvas image
+/// </summary>
 public class Transition : MonoBehaviour
 {
     public static Transition reference;
@@ -34,11 +37,11 @@ public class Transition : MonoBehaviour
 
     /// <summary>
     /// Start a fade effect
-    /// </summary>
-    /// <param name="transitionSpeed"> how fast the faded happens </param>
+    /// <param name="color"> the color of the fade (defaults to black), </param>
+    /// <param name="transitionSpeed"> how fast the faded happens (higher is faster), </param>
     /// <param name="waitTime"> how much time it takes to fade out again </param>
-    /// <param name="color"> the color of the fade, defaults to black </param>
-    public void StartTransition(float transitionSpeed = 3f, float waitTime = 3f, Vector3 color = default)
+    /// </summary>
+    public void StartTransition(Vector3 color = default, float transitionSpeed = 3f, float waitTime = 3f)
     {
         this.transitionSpeed = transitionSpeed;
         this.waitTime = waitTime;
