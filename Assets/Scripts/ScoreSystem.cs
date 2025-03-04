@@ -35,7 +35,7 @@ public class ScoreSystem : MonoBehaviour
     void Awake()
     {
         maximumAmountDirt = Patient.instance.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > 0).ToList();
-        Win.AddListener(() => SceneManager.LoadScene("Win"));
+        Win.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Win")));
     } 
 
     void Update() => ScoreManager();
@@ -45,6 +45,10 @@ public class ScoreSystem : MonoBehaviour
         progress = maximumAmountDirt.Count(_ => _.Amount == 0) / (float)maximumAmountDirt.Count;
         scoreText.text = scoreTimer > 0 ? ((int)(difficultyMultiplier * scoreTimer)).ToString() : invokeNoTimeLeft();
         progressBar.value = progress;
-        new Action(progress == 1 ? (Action)(() => Win.Invoke()) : () => { }).Invoke();
+        new Action(progress == 1 ? (Action)(() =>
+        {
+            Win.Invoke();
+            this.enabled = false;
+        }) : () => { }).Invoke();
     }
 }
