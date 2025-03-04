@@ -15,6 +15,7 @@ public class ScoreSystem : MonoBehaviour
     Func<string> invokeNoTimeLeft => _invokeNoTimeLeft ??= () =>
     {
         NoTimeLeft.Invoke();
+        this.enabled = false;
         return "0";
     }; Func<string> _invokeNoTimeLeft;
     
@@ -36,6 +37,7 @@ public class ScoreSystem : MonoBehaviour
     {
         maximumAmountDirt = Patient.instance.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > 0).ToList();
         Win.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Win")));
+        NoTimeLeft.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Lose")));
     } 
 
     void Update() => ScoreManager();
