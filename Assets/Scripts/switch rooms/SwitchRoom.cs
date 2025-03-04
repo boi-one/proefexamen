@@ -7,11 +7,11 @@ public class SwitchRoom : MonoBehaviour
     public static SwitchRoom reference;
 
     [SerializeField]
-    private GameObject waitingRoom;
+    GameObject waitingRoom;
     [SerializeField]
-    private GameObject operationRoom;
+    GameObject operationRoom;
     [SerializeField]
-    private TMP_Text AnouncementText;
+    TMP_Text AnouncementText;
 
     public bool operationRoomActive
     {
