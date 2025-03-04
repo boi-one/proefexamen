@@ -43,6 +43,7 @@ public class CameraControl : Interaction
 
         if (pivotPoint && Input.GetMouseButtonDown(0))
         {
+            transform.eulerAngles = new Vector3(0, 0, 0);
             pivotPoint.eulerAngles = new Vector3(0, 0, 0);
             pitch = 0;
             yaw = 0;

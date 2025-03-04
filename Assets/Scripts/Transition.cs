@@ -10,7 +10,7 @@ public class Transition : MonoBehaviour
     float alpha = 0;
     bool transitioning = false;
     bool startTransition = false;
-    Vector3 transitionColor = new Vector3(0, 0, 0);
+    Vector3 transitionColor = new(0, 0, 0);
     Action transitionEvent = () => { };
     float transitionSpeed = 0;
     float waitTime = 0;
@@ -38,6 +38,7 @@ public class Transition : MonoBehaviour
     /// <param name="transitionSpeed"> how fast the faded happens </param>
     /// <param name="waitTime"> how much time it takes to fade out again </param>
     /// <param name="color"> the color of the fade, defaults to black </param>
+    public void StartTransition() => StartTransition(3);
     public void StartTransition(float transitionSpeed = 3f, float waitTime = 3f, Vector3 color = default)
     {
         this.transitionSpeed = transitionSpeed;
