@@ -19,8 +19,8 @@ public class Tooth : Part
         {
             toothAfflicions.Add(meshRenderer.materials[0]);
             toothAfflicions.Add(affliction.material);
-            Debug.Log(Mathf.FloorToInt(UnityEngine.Random.Range(1, 3)));
-            if (Mathf.FloorToInt(UnityEngine.Random.Range(1, 3)) == 1)
+            int chance = affliction.Type == AfflictionType.hole ? 6 : 3;
+            if (Mathf.FloorToInt(UnityEngine.Random.Range(1, chance)) == 1)
                 affliction.Amount = UnityEngine.Random.Range(0.3f, 1.0f);
         }
         meshRenderer.SetMaterials(toothAfflicions);
