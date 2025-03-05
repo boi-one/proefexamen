@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class ScoreSystem : MonoBehaviour
 {
     # region Variables
     
+    public UnityEvent Angry;
     public UnityEvent Win;
     public UnityEvent NoTimeLeft;
     Func<string> invokeNoTimeLeft => _invokeNoTimeLeft ??= () =>
@@ -24,7 +26,8 @@ public class ScoreSystem : MonoBehaviour
     float scoreTimer => _scoreTimer -= Time.deltaTime / difficultyMultiplier / 2;
     float _scoreTimer = 100;
     float progress;
-    
+
+    Image popUpImage;
     Text scoreText => _scoreText ??= GetComponentInChildren<Text>();
     Text _scoreText;
     Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>();
@@ -35,12 +38,22 @@ public class ScoreSystem : MonoBehaviour
 
     void Awake()
     {
+        popUpImage = FindObjectsByType<Image>(FindObjectsSortMode.None).FirstOrDefault(_ => _.name == "Angry Icon");
+        Angry.AddListener(() => StartCoroutine(TimerCoroutine(1)));
         maximumAmountDirt = Patient.instance.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > 0).ToList();
         Win.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Win")));
         NoTimeLeft.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Lose")));
     } 
 
     void Update() => ScoreManager();
+
+    IEnumerator TimerCoroutine(float time)
+    {
+        _scoreTimer -= 5;
+        popUpImage.enabled = true;
+        yield return new WaitForSeconds(time);
+        popUpImage.enabled = false;
+    }
 
     void ScoreManager()
     {
