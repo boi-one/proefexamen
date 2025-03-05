@@ -1,14 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : SingletonMonobehaviour<MainMenu>
 {
-    [SerializeField]
-    Button startGameButton;
+    public bool startGame = false;
 
     public void StartGame()
     {
-        startGameButton.gameObject.SetActive(false);
+        UIManager.reference.startGameButton.gameObject.SetActive(false);
         Transition.reference.AddFunction(SwitchRoom.reference.EnterWaitingRoom);
         Transition.reference.StartTransition();
     }

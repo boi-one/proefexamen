@@ -1,21 +1,17 @@
 using UnityEngine;
 
-public class WaitRoomCameraControls : MonoBehaviour
+public class WaitRoomCameraControls : SingletonMonobehaviour<WaitRoomCameraControls>
 {
     public float yaw, pitch;
-    public static WaitRoomCameraControls reference;
 
     void Awake()
     {
-        reference = this;        
+        Debug.Log("awake");
     }
-
-    public bool startGame = false; //temp value for testing
-
 
     void Update()
     {
-        if (SwitchRoom.reference.operationRoomActive || !startGame) return;
+        if (SwitchRoom.reference.operationRoomActive || !MainMenu.reference.startGame) return;
         
         yaw += Input.mousePositionDelta.x;
         pitch -= Input.mousePositionDelta.y;
