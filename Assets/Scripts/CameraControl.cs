@@ -37,11 +37,11 @@ public class CameraControl : Interaction
     void CameraPivot()
     {
         if (!transform.parent)
-            transform.eulerAngles = new(0, 0, 0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
 
         if (pivotPoint && Input.GetMouseButtonDown(0))
         {
-            transform.parent.eulerAngles = new(0, 0, 0);
+            pivotPoint.eulerAngles = new Vector3(0, 0, 0);
             pitch = 0;
             yaw = 0;
         }
