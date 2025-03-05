@@ -6,8 +6,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
-public class ScoreSystem : MonoBehaviour
+public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
 {
     # region Variables
     
@@ -20,9 +21,8 @@ public class ScoreSystem : MonoBehaviour
         this.enabled = false;
         return "0";
     }; Func<string> _invokeNoTimeLeft;
-    
-    [SerializeField]
-    int difficultyMultiplier = 1;
+
+    public int difficultyMultiplier = 1;
     float scoreTimer => _scoreTimer -= Time.deltaTime / difficultyMultiplier / 2;
     float _scoreTimer = 100;
     float progress;

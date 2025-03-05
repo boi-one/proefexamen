@@ -1,6 +1,30 @@
+using System;
+using System.Linq;
+using System.Reflection;
 using UnityEngine;
-public class Tool : MonoBehaviour 
+using UnityEngine.Serialization;
+
+public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
+    public static T reference;
+
+    void Awake()
+    {
+        reference = FindAnyObjectByType<T>();
+        typeof(T).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).First(_ => _.DeclaringType == typeof(T) && _.Name == "Awake")
+            .Invoke(reference, new object[] { });
+    }
+}
+
+
+public class Tool : Singleton<Tool> 
+{
+    // WRONG!!!
+    void Awake()
+    {
+    }
+    
+    
     public static Tool CurrentlySelectedTool
     {
         get => _currentlySelectedTool;
@@ -30,7 +54,7 @@ public class Tool : MonoBehaviour
 
     public Transform interactPoint;
 
-    public AfflictionType affliction;
+    [FormerlySerializedAs("afflictionType")] [FormerlySerializedAs("affliction")] public AfflictionType intendedType;
 
     void Update()
     {
@@ -44,23 +68,18 @@ public class Tool : MonoBehaviour
                 continue;
                 
             transform.position = hit.point + (transform.position - interactPoint.position);
-            if (Input.GetMouseButtonDown(0))
-                Use();
+            if (Input.GetKey(KeyCode.E))
+                Use(hit.collider);
             
             break;
         }
     }
 
     /// <summary> Inheritors do usage effects </summary>
-    protected virtual void Use()
+    protected virtual void Use(Collider whoLol)
     {
-        if (FindObjectsByType<Part>(FindObjectsSortMode.None).GetLowest(_ => Vector3.Distance(_.transform.position, interactPoint.position)) is
-            {
-                Item2: < 0.3f
-            } found)
-        {
-            Affect(found.Item1);
-        }
+        if (whoLol.TryGetComponent<Part>(out var lol)) 
+            Affect(lol);
     }
     
     protected virtual void Affect(Part target) { }

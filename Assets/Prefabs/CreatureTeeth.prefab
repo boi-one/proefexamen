@@ -87,7 +87,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
   - Type: 1
     _amount: 0
     OnAdded:
@@ -96,7 +96,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
   - Type: 2
     _amount: 0
     OnAdded:
@@ -105,7 +105,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
   clean: 0
 --- !u!64 &8083144595971727040
 MeshCollider:
@@ -271,7 +271,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
   - Type: 1
     _amount: 0
     OnAdded:
@@ -280,7 +280,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
   - Type: 2
     _amount: 0
     OnAdded:
@@ -289,7 +289,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
   clean: 0
 --- !u!64 &7873488839450098205
 MeshCollider:
@@ -603,7 +603,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
   - Type: 1
     _amount: 0
     OnAdded:
@@ -612,7 +612,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
   - Type: 2
     _amount: 0
     OnAdded:
@@ -621,7 +621,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
   clean: 0
 --- !u!64 &8624754100160208697
 MeshCollider:
@@ -787,7 +787,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
   - Type: 1
     _amount: 0
     OnAdded:
@@ -796,7 +796,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
   - Type: 2
     _amount: 0
     OnAdded:
@@ -805,7 +805,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
   clean: 0
 --- !u!64 &5459065508517773681
 MeshCollider:
@@ -916,7 +916,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
   - Type: 1
     _amount: 0
     OnAdded:
@@ -925,7 +925,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
   - Type: 2
     _amount: 0
     OnAdded:
@@ -934,7 +934,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
   clean: 0
 --- !u!64 &3404206457979837885
 MeshCollider:
@@ -1255,7 +1255,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
   - Type: 1
     _amount: 0
     OnAdded:
@@ -1264,7 +1264,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
   - Type: 2
     _amount: 0
     OnAdded:
@@ -1273,7 +1273,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
   clean: 0
 --- !u!64 &3067852380907792755
 MeshCollider:
@@ -1353,7 +1353,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
   - Type: 1
     _amount: 0
     OnAdded:
@@ -1362,7 +1362,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
   - Type: 2
     _amount: 0
     OnAdded:
@@ -1371,7 +1371,7 @@ MonoBehaviour:
     OnRemoved:
       m_PersistentCalls:
         m_Calls: []
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
   clean: 0
 --- !u!64 &3013966601302226286
 MeshCollider:
