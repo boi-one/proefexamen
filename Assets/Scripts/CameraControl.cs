@@ -1,6 +1,4 @@
 using UnityEngine;
-
-
 public class CameraControl : Interaction
 {
     #region Variables
