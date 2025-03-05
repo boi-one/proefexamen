@@ -13,18 +13,20 @@ public class Transition : MonoBehaviour
     public static Transition reference;
     Image transitionScreen;
     float alpha = 0;
-    bool transitioning = false;
+    bool transitioningBack = false;
     bool startTransition = false;
-    Vector3 transitionColor = new Vector3(0, 0, 0);
+    Vector3 transitionColor = new(0, 0, 0);
     Action transitionEvent = () => { };
     float transitionSpeed = 0;
     float waitTime = 0;
+    
 
     void Awake()
     {
         reference = this;
         transitionScreen = GetComponent<Image>();
         CoverScreen();
+        DontDestroyOnLoad(transform.parent.gameObject);
     }
 
     void Update()
@@ -43,6 +45,7 @@ public class Transition : MonoBehaviour
     /// <param name="transitionSpeed"> how fast the faded happens (higher is faster), </param>
     /// <param name="waitTime"> how much time it takes to fade out again </param>
     /// </summary>
+    public void StartTransition() => StartTransition(Color.black);
     public void StartTransition(Vector3 color = default, float transitionSpeed = 3f, float waitTime = 3f)
     {
         this.transitionSpeed = transitionSpeed;
@@ -50,7 +53,7 @@ public class Transition : MonoBehaviour
         this.transitionColor = color;
 
         startTransition = true;
-        transitioning = false;
+        transitioningBack = false;
     }
 
     public void AddFunction(Action function)
@@ -83,14 +86,14 @@ public class Transition : MonoBehaviour
 
     public void TransitionFade(float speed = 3f, float waitTime = 3f)
     {
-        if (!transitioning) FadeIn(speed);
-        if (alpha >= 1 && !transitioning)
+        if (!transitioningBack) FadeIn(speed);
+        if (alpha >= 1 && !transitioningBack)
         {
-            transitioning = true;
+            transitioningBack = true;
             waitTime += Time.time;
             transitionEvent();
         }
-        if (Time.time > waitTime && transitioning)
+        if (Time.time > waitTime && transitioningBack)
         {
             FadeOut(speed);
         }

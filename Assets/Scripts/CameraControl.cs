@@ -43,6 +43,7 @@ public class CameraControl : Interaction
 
         if (pivotPoint && Input.GetMouseButtonDown(0))
         {
+            transform.eulerAngles = new Vector3(0, 0, 0);
             pivotPoint.eulerAngles = new Vector3(0, 0, 0);
             pitch = 0;
             yaw = 0;
@@ -52,8 +53,7 @@ public class CameraControl : Interaction
         transform.position = pivotPoint ? pivotPoint.position - pivotPoint.forward * zoom : new Vector3(0,0,-1) * zoom;
         if (Input.GetMouseButton(1) && transform.parent)
         {
-            Mathf.Clamp(pitch, -90, 90);
-            Mathf.Clamp(yaw, -90, 90);
+            pitch = Mathf.Clamp(pitch, -90, 90);
             pitch += -Input.mousePositionDelta.y;
             yaw += Input.mousePositionDelta.x;
             transform.parent.rotation = Quaternion.Euler(pitch, yaw, 0);

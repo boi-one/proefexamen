@@ -1,20 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreSystem : MonoBehaviour
 {
     # region Variables
     
-    UnityEvent Win;
-    UnityEvent NoTimeLeft;
+    public UnityEvent Win;
+    public UnityEvent NoTimeLeft;
     Func<string> invokeNoTimeLeft => _invokeNoTimeLeft ??= () =>
     {
         NoTimeLeft.Invoke();
+        this.enabled = false;
         return "0";
     }; Func<string> _invokeNoTimeLeft;
     
@@ -24,22 +25,32 @@ public class ScoreSystem : MonoBehaviour
     float _scoreTimer = 100;
     float progress;
     
-    //[SerializeField]
-    //List<Transform> teeth = new();
     Text scoreText => _scoreText ??= GetComponentInChildren<Text>();
     Text _scoreText;
     Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>();
     Slider _progressBar;
-
+    List<Affliction> maximumAmountDirt = new();
+    
     #endregion
+
+    void Awake()
+    {
+        maximumAmountDirt = Patient.instance.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > 0).ToList();
+        Win.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Win")));
+        NoTimeLeft.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Lose")));
+    } 
 
     void Update() => ScoreManager();
 
     void ScoreManager()
     {
-        progress = Patient.instance.Parts.Count(_ => _.GetComponent<Tooth>().clean) / (float)Patient.instance.Parts.Length;
+        progress = maximumAmountDirt.Count(_ => _.Amount == 0) / (float)maximumAmountDirt.Count;
         scoreText.text = scoreTimer > 0 ? ((int)(difficultyMultiplier * scoreTimer)).ToString() : invokeNoTimeLeft();
         progressBar.value = progress;
-        new Action(progress == 1 ? (Action)(() => Win.Invoke()) : () => { }).Invoke();
+        new Action(progress == 1 ? (Action)(() =>
+        {
+            Win.Invoke();
+            this.enabled = false;
+        }) : () => { }).Invoke();
     }
 }
