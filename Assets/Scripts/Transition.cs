@@ -43,7 +43,7 @@ public class Transition : MonoBehaviour
     /// <param name="transitionSpeed"> how fast the faded happens (higher is faster), </param>
     /// <param name="waitTime"> how much time it takes to fade out again </param>
     /// </summary>
-    public void StartTransition() => StartTransition(Color.black);
+    public void StartTransition() => StartTransition(default);
     public void StartTransition(Vector3 color = default, float transitionSpeed = 3f, float waitTime = 3f)
     {
         this.transitionSpeed = transitionSpeed;
