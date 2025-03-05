@@ -40,10 +40,7 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
         NoTimeLeft.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Lose")));
     } 
 
-    void Update()
-    { 
-        ScoreManager();
-    }
+    void Update() => ScoreManager();
 
     void ScoreManager()
     {
