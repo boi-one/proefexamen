@@ -24,7 +24,7 @@ public class ScoreSystem : MonoBehaviour
     [SerializeField]
     int difficultyMultiplier = 1;
     float scoreTimer => _scoreTimer -= Time.deltaTime / difficultyMultiplier / 2;
-    public float _scoreTimer = 100;
+    float _scoreTimer = 100;
     float progress;
 
     Image popUpImage;
