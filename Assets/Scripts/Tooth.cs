@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using System;
+using NUnit.Framework;
 using NUnit.Framework.Constraints;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class Tooth : Part
 
     public void Awake()
     {
-        meshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
         List<Material> toothAfflicions = new List<Material>();
         foreach (var affliction in Afflictions)
         {
