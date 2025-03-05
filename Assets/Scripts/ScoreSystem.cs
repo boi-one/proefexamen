@@ -38,9 +38,13 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
 
     void Awake()
     {
+<<<<<<< HEAD
         popUpImage = FindObjectsByType<Image>(FindObjectsSortMode.None).FirstOrDefault(_ => _.name == "Angry Icon");
         Angry.AddListener(() => StartCoroutine(TimerCoroutine(1)));
         maximumAmountDirt = Patient.instance.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > 0).ToList();
+=======
+        maximumAmountDirt = Patient.reference.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > 0).ToList();
+>>>>>>> boi
         Win.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Win")));
         NoTimeLeft.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Lose")));
     } 
