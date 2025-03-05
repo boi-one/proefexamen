@@ -6,7 +6,9 @@ using UnityEngine.UI;
 /// <summary>
 /// Make sure the Transition script is applied to a canvas image
 /// </summary>
-public class Transition : MonoBehaviour
+
+[RequireComponent(typeof(Image))]
+public class Transition : SingletonMonobehaviour<Transition>
 {
     public static Transition reference;
     Image transitionScreen;
