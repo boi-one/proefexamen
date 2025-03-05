@@ -35,17 +35,15 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
 
     void Awake()
     {
-        reference = this;
         maximumAmountDirt = Patient.instance.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > 0).ToList();
         Win.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Win")));
         NoTimeLeft.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Lose")));
     } 
 
     void Update()
-    {
+    { 
         ScoreManager();
     }
-
 
     void ScoreManager()
     {

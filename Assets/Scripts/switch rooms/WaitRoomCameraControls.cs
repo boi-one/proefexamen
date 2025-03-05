@@ -4,11 +4,6 @@ public class WaitRoomCameraControls : SingletonMonobehaviour<WaitRoomCameraContr
 {
     public float yaw, pitch;
 
-    void Awake()
-    {
-        Debug.Log("awake");
-    }
-
     void Update()
     {
         if (SwitchRoom.reference.operationRoomActive || !MainMenu.reference.startGame) return;
