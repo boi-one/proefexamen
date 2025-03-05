@@ -1,3 +1,4 @@
+using NUnit.Framework.Internal;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,14 +10,14 @@ public class Tooth : Part
 
     public void Awake()
     {
-        meshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
         List<Material> toothAfflicions = new List<Material>();
         foreach (var affliction in Afflictions)
         {
             toothAfflicions.Add(meshRenderer.materials[0]);
             toothAfflicions.Add(affliction.material);
-            Debug.Log(Mathf.FloorToInt(UnityEngine.Random.Range(1, 3)));
-            if (Mathf.FloorToInt(UnityEngine.Random.Range(1, 3)) == 1)
+            int chance = affliction.Type == AfflictionType.hole ? 6 : 3;
+            if (Mathf.FloorToInt(UnityEngine.Random.Range(1, chance)) == 1)
                 affliction.Amount = UnityEngine.Random.Range(0.3f, 1.0f);
         }
         meshRenderer.SetMaterials(toothAfflicions);
