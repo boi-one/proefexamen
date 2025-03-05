@@ -6,12 +6,6 @@ using UnityEngine.Serialization;
 
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    [Flags]
-    enum agwgw
-    {
-        a 1,b 2 ,c 4,d
-    }
-    
     public static T reference;
 
     void Awake()
