@@ -7,8 +7,7 @@ public class UIManager : SingletonMonobehaviour<UIManager>
 
     public Button startGameButton;
     public TMP_Text AnouncementText;
-    [SerializeField]
-    TMP_Dropdown difficultyDropdown;
+    public TMP_Dropdown difficultyDropdown;
     public int difficultyMultiplier
     {
         get => ScoreSystem.reference.difficultyMultiplier;

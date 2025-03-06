@@ -57,6 +57,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8817694009670818575}
     m_Modifications:
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     - target: {fileID: 3132184633027738483, guid: cc02ad86015262146ad46a781599371c, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -105,10 +129,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     - target: {fileID: 6829299365593323474, guid: cc02ad86015262146ad46a781599371c, type: 3}
       propertyPath: m_Name
       value: CreatureTeeth (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -127,6 +211,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8817694009670818575}
     m_Modifications:
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     - target: {fileID: 3132184633027738483, guid: cc02ad86015262146ad46a781599371c, type: 3}
       propertyPath: m_LocalScale.y
       value: -1
@@ -171,10 +279,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     - target: {fileID: 6829299365593323474, guid: cc02ad86015262146ad46a781599371c, type: 3}
       propertyPath: m_Name
       value: CreatureTeeth (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -193,6 +361,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8817694009670818575}
     m_Modifications:
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     - target: {fileID: 3132184633027738483, guid: cc02ad86015262146ad46a781599371c, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -237,10 +429,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     - target: {fileID: 6829299365593323474, guid: cc02ad86015262146ad46a781599371c, type: 3}
       propertyPath: m_Name
       value: CreatureTeeth (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -259,6 +511,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8817694009670818575}
     m_Modifications:
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 1059187898234695836, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 1091943811228180637, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     - target: {fileID: 3132184633027738483, guid: cc02ad86015262146ad46a781599371c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.15
@@ -299,10 +575,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 3708242556004924877, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     - target: {fileID: 6829299365593323474, guid: cc02ad86015262146ad46a781599371c, type: 3}
       propertyPath: m_Name
       value: CreatureTeeth
       objectReference: {fileID: 0}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 6830846234851731388, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 7349544160083070220, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 8174337449319285881, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[0].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[1].material
+      value: 
+      objectReference: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
+    - target: {fileID: 8290811975620332104, guid: cc02ad86015262146ad46a781599371c, type: 3}
+      propertyPath: Afflictions.Array.data[2].material
+      value: 
+      objectReference: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

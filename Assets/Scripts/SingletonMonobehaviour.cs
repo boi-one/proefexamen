@@ -10,7 +10,7 @@ public class SingletonMonobehaviour<T> : MonoBehaviour where T : MonoBehaviour
         get
         {
             if(_reference == null)
-                FindAnyObjectByType<SingletonMonobehaviour<T>>().Awake();
+                FindAnyObjectByType<SingletonMonobehaviour<T>>(FindObjectsInactive.Include).Awake();
             return _reference;
         }
         set => _reference = value;
@@ -23,7 +23,7 @@ public class SingletonMonobehaviour<T> : MonoBehaviour where T : MonoBehaviour
         if (awakeHappened) return;
         awakeHappened = true;
         
-        reference = FindAnyObjectByType<T>();
+        reference = FindAnyObjectByType<T>(FindObjectsInactive.Include);
         if(typeof(T).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public).FirstOrDefault(_ => _.DeclaringType == typeof(T) && _.Name == "Awake") is {} found)
             found.Invoke(reference, new object[] { });
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
@@ -8,6 +9,10 @@ public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
     GameObject waitingRoom;
     [SerializeField]
     GameObject operationRoom;
+    [SerializeField]
+    GameObject scoreSystem;
+    [SerializeField]
+    GameObject mouth;
 
     public bool operationRoomActive
     {
@@ -19,12 +24,14 @@ public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
     {
         MainMenu.reference.startGame = true;
         UIManager.reference.AnouncementText.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(TimerCoroutine());
     }
 
     public void EnterOperationRoom()
     {
         UIManager.reference.AnouncementText.gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
     }
 
 
@@ -34,6 +41,8 @@ public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
 
         waitingRoom.SetActive(!_operationRoomActive);
         operationRoom.SetActive(_operationRoomActive);
+        mouth.SetActive(operationRoomActive);
+        scoreSystem.SetActive(operationRoomActive);
     }
 
     IEnumerator TimerCoroutine()

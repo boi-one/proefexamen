@@ -7,7 +7,9 @@ public class MainMenu : SingletonMonobehaviour<MainMenu>
 
     public void StartGame()
     {
+        startGame = true;
         UIManager.reference.startGameButton.gameObject.SetActive(false);
+        UIManager.reference.difficultyDropdown.gameObject.SetActive(false);
         Transition.reference.AddFunction(SwitchRoom.reference.EnterWaitingRoom);
         Transition.reference.StartTransition();
     }
