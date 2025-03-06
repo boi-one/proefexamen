@@ -2,16 +2,12 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class SwitchRoom : MonoBehaviour
+public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
 {
-    public static SwitchRoom reference;
-
     [SerializeField]
     GameObject waitingRoom;
     [SerializeField]
     GameObject operationRoom;
-    [SerializeField]
-    TMP_Text AnouncementText;
 
     public bool operationRoomActive
     {
@@ -19,21 +15,16 @@ public class SwitchRoom : MonoBehaviour
     }
     bool _operationRoomActive = false;
 
-    void Awake()
-    {
-        reference = this;
-    }
-
     public void EnterWaitingRoom()
     {
-        WaitRoomCameraControls.reference.startGame = true;
-        AnouncementText.gameObject.SetActive(true);
+        MainMenu.reference.startGame = true;
+        UIManager.reference.AnouncementText.gameObject.SetActive(true);
         StartCoroutine(TimerCoroutine());
     }
 
     public void EnterOperationRoom()
     {
-        AnouncementText.gameObject.SetActive(false);
+        UIManager.reference.AnouncementText.gameObject.SetActive(false);
     }
 
 
@@ -49,8 +40,8 @@ public class SwitchRoom : MonoBehaviour
     {
         for (int i = 5; i >= 0; i--)
         {
-            AnouncementText.text = "Be ready, your patient is ariving\n";
-            AnouncementText.text += i.ToString();
+            UIManager.reference.AnouncementText.text = "Be ready, your patient is ariving\n";
+            UIManager.reference.AnouncementText.text += i.ToString();
             yield return new WaitForSeconds(1);
         }
         SwitchRooms();
