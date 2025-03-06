@@ -4,33 +4,8 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+public class Tool : MonoBehaviour 
 {
-    [Flags]
-    enum agwgw
-    {
-        a 1,b 2 ,c 4,d
-    }
-    
-    public static T reference;
-
-    void Awake()
-    {
-        reference = FindAnyObjectByType<T>();
-        typeof(T).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).First(_ => _.DeclaringType == typeof(T) && _.Name == "Awake")
-            .Invoke(reference, new object[] { });
-    }
-}
-
-
-public class Tool : Singleton<Tool> 
-{
-    // WRONG!!!
-    void Awake()
-    {
-    }
-    
-    
     public static Tool CurrentlySelectedTool
     {
         get => _currentlySelectedTool;
@@ -38,10 +13,13 @@ public class Tool : Singleton<Tool>
         {
             if (_currentlySelectedTool == value)
                 return;
+            
             if (_currentlySelectedTool is not null)
                 _currentlySelectedTool.IsSelected = false;
             if (value is not null)
                 value.IsSelected = true;
+            
+            _currentlySelectedTool = value;
         }
     } static Tool _currentlySelectedTool;
 
