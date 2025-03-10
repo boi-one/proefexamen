@@ -16,7 +16,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     }
 }
 
-public class Tool : Singleton<Tool> 
+public class Tool : MonoBehaviour 
 {
     public static Tool CurrentlySelectedTool
     {

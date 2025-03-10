@@ -10,7 +10,7 @@ public class SingletonMonobehaviour<T> : MonoBehaviour where T : MonoBehaviour
         get
         {
             if(_reference == null)
-                FindAnyObjectByType<SingletonMonobehaviour<T>>(FindObjectsInactive.Include).Awake();
+                FindAnyObjectByType<SingletonMonobehaviour<T>>(FindObjectsInactive.Include)?.Awake();
             return _reference;
         }
         set => _reference = value;
