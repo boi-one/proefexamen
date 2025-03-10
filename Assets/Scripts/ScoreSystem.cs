@@ -12,11 +12,13 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
 {
     # region Variables
     
+    Transition reference;
     public UnityEvent Angry;
     public UnityEvent Win;
     public UnityEvent NoTimeLeft;
     Func<string> invokeNoTimeLeft => _invokeNoTimeLeft ??= () =>
     {
+        reference.StartTransition();
         NoTimeLeft.Invoke();
         this.enabled = false;
         return "0";
@@ -27,7 +29,7 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
     float _scoreTimer = 100;
     float progress;
 
-    Image popUpImage;
+    public Image popUpImage;
     Text scoreText => _scoreText ??= GetComponentInChildren<Text>();
     Text _scoreText;
     Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>();
@@ -38,11 +40,12 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
 
     void Awake()
     {
+        FindObjectsByType<Transition>(FindObjectsSortMode.None).FirstOrDefault(_ => reference = _);
         popUpImage = FindObjectsByType<Image>(FindObjectsSortMode.None).FirstOrDefault(_ => _.name == "Angry Icon");
         Angry.AddListener(() => StartCoroutine(TimerCoroutine(1)));
         maximumAmountDirt = Patient.reference.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > 0).ToList();
-        Win.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Win")));
-        NoTimeLeft.AddListener(() => Transition.reference.AddFunction(() => SceneManager.LoadScene("Lose")));
+        Win.AddListener(() => reference.AddFunction(() => SceneManager.LoadScene("Win")));
+        NoTimeLeft.AddListener(() => reference.AddFunction(() => SceneManager.LoadScene("Lose")));
     } 
 
     void Update() => ScoreManager();
@@ -62,6 +65,7 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
         progressBar.value = progress;
         new Action(progress == 1 ? (Action)(() =>
         {
+            reference.StartTransition();
             Win.Invoke();
             this.enabled = false;
         }) : () => { }).Invoke();
