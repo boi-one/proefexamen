@@ -34,10 +34,12 @@ public class Transition : SingletonMonobehaviour<Transition>
 
     void Update()
     {
-        if(transitionScreen) transitionScreen.alpha = alpha;
+        if(transitionScreen) 
+            transitionScreen.alpha = alpha;
 
         if (startTransition)
-        {transitionScreen = GetComponent<CanvasGroup>();
+        {
+            transitionScreen = GetComponent<CanvasGroup>();
             TransitionFade(transitionSpeed, waitTime);
         }
     }
