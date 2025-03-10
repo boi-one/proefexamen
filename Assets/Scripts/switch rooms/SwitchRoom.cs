@@ -38,7 +38,7 @@ public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
     public void SwitchRooms()
     {
         _operationRoomActive = !_operationRoomActive;
-
+        
         waitingRoom.SetActive(!_operationRoomActive);
         operationRoom.SetActive(_operationRoomActive);
         mouth.SetActive(operationRoomActive);
@@ -49,12 +49,13 @@ public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
     {
         for (int i = 5; i >= 0; i--)
         {
-            UIManager.reference.AnouncementText.text = "Be ready, your patient is ariving\n";
+            UIManager.reference.AnouncementText.text = "Be ready, your patient is arriving\n";
             UIManager.reference.AnouncementText.text += i.ToString();
             yield return new WaitForSeconds(1);
         }
-        SwitchRooms();
-        EnterOperationRoom();
+        Transition.reference.AddFunction(SwitchRooms);
+        Transition.reference.AddFunction(EnterOperationRoom);
+        Transition.reference.StartTransition();
         Camera.main.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

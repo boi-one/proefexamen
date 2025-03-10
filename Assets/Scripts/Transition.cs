@@ -34,10 +34,10 @@ public class Transition : SingletonMonobehaviour<Transition>
 
     void Update()
     {
-        transitionScreen.alpha = alpha;
+        if(transitionScreen) transitionScreen.alpha = alpha;
 
         if (startTransition)
-        {
+        {transitionScreen = GetComponent<CanvasGroup>();
             TransitionFade(transitionSpeed, waitTime);
         }
     }
@@ -49,9 +49,14 @@ public class Transition : SingletonMonobehaviour<Transition>
     /// <param name="waitTime"> how much time it takes to fade out again </param>
     /// </summary>
     public void StartTransition() => StartTransition(transitionSpeed: 10f, waitTime: 7);
-    public void StartTransition(Vector3 color = default, float transitionSpeed = 3f, float waitTime = 3f)
+    public void StartTransition(Vector3 color = default, float transitionSpeed = 3f, float waitTime = 3f, bool loading = true)
     {
-        StartCoroutine(LoadingScreen(0.5f));
+        if (loading)
+        {
+            transitionImage.sprite = Images[0];
+            StartCoroutine(LoadingScreen(0.5f));
+        }
+        else transitionImage.sprite = null;
         this.transitionSpeed = transitionSpeed;
         this.waitTime = waitTime;
         startTransition = true;
