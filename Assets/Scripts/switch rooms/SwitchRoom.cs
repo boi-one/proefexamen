@@ -2,16 +2,16 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class SwitchRoom : MonoBehaviour
+public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
 {
-    public static SwitchRoom reference;
-
     [SerializeField]
     GameObject waitingRoom;
     [SerializeField]
     GameObject operationRoom;
     [SerializeField]
-    TMP_Text AnouncementText;
+    GameObject scoreSystem;
+    [SerializeField]
+    GameObject mouth;
 
     public bool operationRoomActive
     {
@@ -19,42 +19,42 @@ public class SwitchRoom : MonoBehaviour
     }
     bool _operationRoomActive = false;
 
-    void Awake()
-    {
-        reference = this;
-    }
-
     public void EnterWaitingRoom()
     {
-        WaitRoomCameraControls.reference.startGame = true;
-        AnouncementText.gameObject.SetActive(true);
+        MainMenu.reference.startGame = true;
+        UIManager.reference.AnouncementText.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(TimerCoroutine());
     }
 
     public void EnterOperationRoom()
     {
-        AnouncementText.gameObject.SetActive(false);
+        UIManager.reference.AnouncementText.gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
     }
 
 
     public void SwitchRooms()
     {
         _operationRoomActive = !_operationRoomActive;
-
+        
         waitingRoom.SetActive(!_operationRoomActive);
         operationRoom.SetActive(_operationRoomActive);
+        mouth.SetActive(operationRoomActive);
+        scoreSystem.SetActive(operationRoomActive);
     }
 
     IEnumerator TimerCoroutine()
     {
         for (int i = 5; i >= 0; i--)
         {
-            AnouncementText.text = "Be ready, your patient is ariving\n";
-            AnouncementText.text += i.ToString();
+            UIManager.reference.AnouncementText.text = "Be ready, your patient is arriving\n";
+            UIManager.reference.AnouncementText.text += i.ToString();
             yield return new WaitForSeconds(1);
         }
-        SwitchRooms();
-        EnterOperationRoom();
+        Transition.reference.AddFunction(SwitchRooms);
+        Transition.reference.AddFunction(EnterOperationRoom);
+        Transition.reference.StartTransition();
         Camera.main.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

@@ -1,38 +1,45 @@
 using System;
-using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
 /// Make sure the Transition script is applied to a canvas image
 /// </summary>
-public class Transition : MonoBehaviour
+
+[RequireComponent(typeof(Image))]
+public class Transition : SingletonMonobehaviour<Transition>
 {
     public static Transition reference;
-    Image transitionScreen;
+    Image transitionImage;
+    CanvasGroup transitionScreen;
     float alpha = 0;
     bool transitioningBack = false;
     bool startTransition = false;
-    Vector3 transitionColor = new(0, 0, 0);
     Action transitionEvent = () => { };
     float transitionSpeed = 0;
     float waitTime = 0;
     
+    public Sprite[] Images ;
 
     void Awake()
     {
         reference = this;
-        transitionScreen = GetComponent<Image>();
-        CoverScreen();
+        transitionImage = GetComponent<Image>();
+        transitionScreen = GetComponent<CanvasGroup>();
         DontDestroyOnLoad(transform.parent.gameObject);
+            
     }
 
     void Update()
     {
-        transitionScreen.color = new Vector4(transitionColor.x, transitionColor.y, transitionColor.z, alpha);
+        if(transitionScreen) 
+            transitionScreen.alpha = alpha;
 
         if (startTransition)
         {
+            transitionScreen = GetComponent<CanvasGroup>();
             TransitionFade(transitionSpeed, waitTime);
         }
     }
@@ -43,15 +50,29 @@ public class Transition : MonoBehaviour
     /// <param name="transitionSpeed"> how fast the faded happens (higher is faster), </param>
     /// <param name="waitTime"> how much time it takes to fade out again </param>
     /// </summary>
-    public void StartTransition() => StartTransition(default);
-    public void StartTransition(Vector3 color = default, float transitionSpeed = 3f, float waitTime = 3f)
+    public void StartTransition() => StartTransition(transitionSpeed: 10f, waitTime: 7);
+    public void StartTransition(Vector3 color = default, float transitionSpeed = 3f, float waitTime = 3f, bool loading = true)
     {
+        if (loading)
+        {
+            transitionImage.sprite = Images[0];
+            StartCoroutine(LoadingScreen(0.5f));
+        }
+        else transitionImage.sprite = null;
         this.transitionSpeed = transitionSpeed;
         this.waitTime = waitTime;
-        this.transitionColor = color;
-
         startTransition = true;
         transitioningBack = false;
+    }
+
+    IEnumerator LoadingScreen(float time)
+    {
+        for (int i = 0; i < Images.Length; i++)
+        {
+            transitionImage.sprite = Images[i];
+            yield return new WaitForSeconds(time);
+            i = i >= 3 ? -1 : i;
+        }
     }
 
     public void AddFunction(Action function)
@@ -64,12 +85,6 @@ public class Transition : MonoBehaviour
         }
 
         transitionEvent += Temp;
-    }
-
-    void CoverScreen()
-    {
-        transitionScreen.transform.position = new Vector2(Screen.width / 2, Screen.height / 2);
-        GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
     }
 
     void FadeIn(float speed = 1f)
