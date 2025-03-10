@@ -29,7 +29,7 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
     float _scoreTimer = 100;
     float progress;
 
-    Image popUpImage;
+    public Image popUpImage;
     Text scoreText => _scoreText ??= GetComponentInChildren<Text>();
     Text _scoreText;
     Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>();
