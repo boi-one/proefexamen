@@ -30,9 +30,9 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
     float progress;
 
     public Image popUpImage;
-    Text scoreText => _scoreText ??= GetComponentInChildren<Text>();
+    Text scoreText => _scoreText ??= GetComponentInChildren<Text>(true);
     Text _scoreText;
-    Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>();
+    Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>(true);
     Slider _progressBar;
     List<Affliction> maximumAmountDirt = new();
     
