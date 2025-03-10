@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
     GameObject scoreSystem;
     [SerializeField]
     GameObject mouth;
-
+    
     public bool operationRoomActive
     {
         get => _operationRoomActive;
