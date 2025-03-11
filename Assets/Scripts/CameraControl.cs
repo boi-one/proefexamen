@@ -38,20 +38,15 @@ public class CameraControl : Interaction
 
     void CameraPivot()
     {
-        
         if (pivotPoint && Input.GetMouseButtonDown(0))
         {
-            previousPivotPoint = pivotPoint;
+            pivotPoint.eulerAngles = new(0, 0, 0);
             pitch = 0;
             yaw = 0;
             transform.eulerAngles = new(0, 0, 0);
         }
-        else if (!pivotPoint && previousPivotPoint)
-        {
-            previousPivotPoint.eulerAngles = new Vector3(0, 0, 0);
+        if (!pivotPoint)
             transform.eulerAngles = new(0, 0, 0);
-        }
-            
         
         transform.parent = pivotPoint;
         transform.position = pivotPoint ? pivotPoint.position - pivotPoint.forward * zoom : new Vector3(0,0,-1) * zoom;
