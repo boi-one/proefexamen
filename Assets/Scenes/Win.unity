@@ -662,73 +662,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 850429427900231787, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 850429427900231787, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1871381310}
-    - target: {fileID: 850429427900231787, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 4171391086582159335, guid: 56677cc00d93e4b45ba56cfc3d6db23f, type: 3}
-    - target: {fileID: 850429427900231787, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 850429427900231787, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchToMainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 850429427900231787, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartTransition
-      objectReference: {fileID: 0}
-    - target: {fileID: 850429427900231787, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Transition, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 850429427900231787, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3847034916466122416, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+    - target: {fileID: 2325017255211992693, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3847034916466122416, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1871381310}
-    - target: {fileID: 3847034916466122416, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 4171391086582159335, guid: 56677cc00d93e4b45ba56cfc3d6db23f, type: 3}
-    - target: {fileID: 3847034916466122416, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3847034916466122416, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchToMainGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 3847034916466122416, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartTransition
-      objectReference: {fileID: 0}
-    - target: {fileID: 3847034916466122416, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Transition, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3847034916466122416, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4397882865271946884, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
       propertyPath: m_Name
       value: End Screen
       objectReference: {fileID: 0}
+    - target: {fileID: 4445939638824026104, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4445939638824026104, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 425eeb396ea807c4cb9fb430d6adf8a3, type: 3}
     - target: {fileID: 5494791339001970077, guid: 98542114dec7d2c41b3e0f541472fc77, type: 3}
       propertyPath: m_Pivot.x
       value: 0
