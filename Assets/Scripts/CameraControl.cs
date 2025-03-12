@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 public class CameraControl : Interaction
 {
     #region Variables
     
     public static Transform pivotPoint;
+    public Transform previousPivotPoint;
     
     float pitch = 0;
     float yaw = 0;
@@ -21,7 +23,7 @@ public class CameraControl : Interaction
     } float _positionValue;
     
     #endregion
-    
+
     void Update()
     {
         Zoom();
@@ -36,16 +38,15 @@ public class CameraControl : Interaction
 
     void CameraPivot()
     {
-        if (!transform.parent)
-            transform.eulerAngles = new Vector3(0, 0, 0);
-
         if (pivotPoint && Input.GetMouseButtonDown(0))
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-            pivotPoint.eulerAngles = new Vector3(0, 0, 0);
+            pivotPoint.eulerAngles = new(0, 0, 0);
             pitch = 0;
             yaw = 0;
+            transform.eulerAngles = new(0, 0, 0);
         }
+        if (!pivotPoint)
+            transform.eulerAngles = new(0, 0, 0);
         
         transform.parent = pivotPoint;
         transform.position = pivotPoint ? pivotPoint.position - pivotPoint.forward * zoom : new Vector3(0,0,-1) * zoom;
@@ -54,7 +55,7 @@ public class CameraControl : Interaction
             pitch = Mathf.Clamp(pitch, -90, 90);
             pitch += -Input.mousePositionDelta.y;
             yaw += Input.mousePositionDelta.x;
-            transform.parent.rotation = Quaternion.Euler(pitch, yaw, 0);
+            pivotPoint.rotation = Quaternion.Euler(pitch, yaw, transform.rotation.z);
         }
     }
 }
