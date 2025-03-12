@@ -13,6 +13,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         reference = FindAnyObjectByType<T>();
         typeof(T).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).First(_ => _.DeclaringType == typeof(T) && _.Name == "Awake")
             .Invoke(reference, new object[] { });
+        DontDestroyOnLoad(gameObject);
     }
 }
 
@@ -76,6 +77,7 @@ public class Tool : MonoBehaviour
     {
         if (whoLol.TryGetComponent<Part>(out var lol)) 
             Affect(lol);
+        print("aljksd");
     }
     
     protected virtual void Affect(Part target) { }

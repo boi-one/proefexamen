@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +10,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Transition : SingletonMonobehaviour<Transition>
 {
-    public static Transition reference;
     Image transitionImage;
     CanvasGroup transitionScreen;
     float alpha = 0;
