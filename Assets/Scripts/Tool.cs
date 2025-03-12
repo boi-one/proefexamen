@@ -16,15 +16,8 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     }
 }
 
-
-public class Tool : Singleton<Tool> 
+public class Tool : MonoBehaviour 
 {
-    // WRONG!!!
-    void Awake()
-    {
-    }
-    
-    
     public static Tool CurrentlySelectedTool
     {
         get => _currentlySelectedTool;
@@ -32,10 +25,13 @@ public class Tool : Singleton<Tool>
         {
             if (_currentlySelectedTool == value)
                 return;
+            
             if (_currentlySelectedTool is not null)
                 _currentlySelectedTool.IsSelected = false;
             if (value is not null)
                 value.IsSelected = true;
+            
+            _currentlySelectedTool = value;
         }
     } static Tool _currentlySelectedTool;
 
