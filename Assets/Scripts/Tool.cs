@@ -1,4 +1,21 @@
+using System;
+using System.Linq;
+using System.Reflection;
 using UnityEngine;
+using UnityEngine.Serialization;
+
+public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+{
+    public static T reference;
+
+    void Awake()
+    {
+        reference = FindAnyObjectByType<T>();
+        typeof(T).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).First(_ => _.DeclaringType == typeof(T) && _.Name == "Awake")
+            .Invoke(reference, new object[] { });
+    }
+}
+
 public class Tool : MonoBehaviour 
 {
     public static Tool CurrentlySelectedTool
@@ -8,12 +25,15 @@ public class Tool : MonoBehaviour
         {
             if (_currentlySelectedTool == value)
                 return;
+            
             if (_currentlySelectedTool is not null)
                 _currentlySelectedTool.IsSelected = false;
             if (value is not null)
                 value.IsSelected = true;
+            
+            _currentlySelectedTool = value;
         }
-    } static Tool _currentlySelectedTool;
+    } public static Tool _currentlySelectedTool;
 
     bool IsSelected
     {
@@ -30,12 +50,21 @@ public class Tool : MonoBehaviour
 
     public Transform interactPoint;
 
-    public AfflictionType affliction;
+    [FormerlySerializedAs("afflictionType")] [FormerlySerializedAs("affliction")] public AfflictionType intendedType;
+    
+    protected float wrongDoing = 0f;
 
     void Update()
     {
         if (!IsSelected) 
             return;
+        wrongDoing -= Time.deltaTime;
+        if (wrongDoing > 1f)
+        {
+            wrongDoing = 0;
+            ScoreSystem.reference.Angry.Invoke();
+        }
+        
 
         var screenToWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0,0,0.1f));
         foreach (var hit in Physics.RaycastAll(screenToWorldPoint, (screenToWorldPoint - Camera.main.transform.position).normalized))
@@ -44,23 +73,18 @@ public class Tool : MonoBehaviour
                 continue;
                 
             transform.position = hit.point + (transform.position - interactPoint.position);
-            if (Input.GetMouseButtonDown(0))
-                Use();
+            if (Input.GetKey(KeyCode.E))
+                Use(hit.collider);
             
             break;
         }
     }
 
     /// <summary> Inheritors do usage effects </summary>
-    protected virtual void Use()
+    protected virtual void Use(Collider whoLol)
     {
-        if (FindObjectsByType<Part>(FindObjectsSortMode.None).GetLowest(_ => Vector3.Distance(_.transform.position, interactPoint.position)) is
-            {
-                Item2: < 0.3f
-            } found)
-        {
-            Affect(found.Item1);
-        }
+        if (whoLol.TryGetComponent<Part>(out var lol)) 
+            Affect(lol);
     }
     
     protected virtual void Affect(Part target) { }

@@ -9,6 +9,7 @@ public enum AfflictionType
     hole
 }
 
+
 [Serializable]
 public class Affliction
 {
@@ -33,7 +34,7 @@ public class Affliction
                     OnRemoved.Invoke();
                     break;
             }
-        } 
+        }
     }
     [SerializeField, Range(0, 1)]
     float _amount;
