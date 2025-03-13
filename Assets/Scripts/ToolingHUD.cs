@@ -27,4 +27,9 @@ public class ToolingHUD : MonoBehaviour
         canvas.enabled = false;
         canvas.enabled = true;
     }
+
+    void OnDestroy()
+    {
+        Tool._currentlySelectedTool = null;
+    }
 }

@@ -35,6 +35,7 @@ public class Tool : MonoBehaviour
             _currentlySelectedTool = value;
         }
     } static Tool _currentlySelectedTool;
+    } public static Tool _currentlySelectedTool;
 
     bool IsSelected
     {
