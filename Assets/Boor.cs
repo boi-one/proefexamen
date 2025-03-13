@@ -61,7 +61,7 @@ public class Boor : Tool
         // todo: when we got all the tools bring this back
         if (target.Afflictions.FirstOrDefault(_ => _.Type == this.intendedType) is { } aff)
         {
-            aff.Amount -= 0.5f * Time.deltaTime;
+            aff.Amount -= 1f * Time.deltaTime;
             
             // particles
             e = true;

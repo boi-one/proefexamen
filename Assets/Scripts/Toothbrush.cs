@@ -15,7 +15,6 @@ public class Toothbrush : Tool
         target.Afflictions.ToList().ForEach(_ =>
         {
             var pre = _.Amount;
-            _.Amount -= (Input.mousePositionDelta.magnitude is { } __ and > 5 ? __ : 0) / 10 * Time.deltaTime;
 
             // cleaning effect
             
@@ -26,10 +25,9 @@ public class Toothbrush : Tool
         });
         
         // todo: when we got all the tools bring this back
-        // if (target.Afflictions.FirstOrDefault(_ => _.Type == this.intendedType) is { } aff)
-        // {
-        //     aff.Amount -= 0.5f * Time.deltaTime;
-        //     // AAAAAAAAAAAAAAAAAA
-        // }
+         if (target.Afflictions.FirstOrDefault(_ => _.Type == this.intendedType) is { } aff)
+         {
+            aff.Amount -= Input.mousePositionDelta.magnitude / 5 * Time.deltaTime;
+         }
     }
 }

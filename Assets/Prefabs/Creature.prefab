@@ -4163,26 +4163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Afflictions:
-  - Type: 0
-    _amount: 0
-    OnAdded:
-      m_PersistentCalls:
-        m_Calls: []
-    OnRemoved:
-      m_PersistentCalls:
-        m_Calls: []
-    material: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
-  - Type: 1
-    _amount: 0
-    OnAdded:
-      m_PersistentCalls:
-        m_Calls: []
-    OnRemoved:
-      m_PersistentCalls:
-        m_Calls: []
-    material: {fileID: 2100000, guid: 72d6bb94d46474646a5076d0c4b7928e, type: 2}
   - Type: 2
-    _amount: 0
+    _amount: 1
     OnAdded:
       m_PersistentCalls:
         m_Calls: []
@@ -4190,6 +4172,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     material: {fileID: 2100000, guid: d8156458e87cb394993d0ba9073c9115, type: 2}
+  - Type: 0
+    _amount: 1
+    OnAdded:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRemoved:
+      m_PersistentCalls:
+        m_Calls: []
+    material: {fileID: 2100000, guid: d32569fee9b97a64e9e6675df1382517, type: 2}
   clean: 0
 --- !u!64 &5693211565979594224
 MeshCollider:
