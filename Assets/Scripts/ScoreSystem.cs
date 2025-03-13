@@ -29,7 +29,6 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
     float _scoreTimer = 100;
     float progress;
 
-    public Image popUpImage;
     Text scoreText => _scoreText ??= GetComponentInChildren<Text>(true);
     Text _scoreText;
     Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>(true);
@@ -41,8 +40,6 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
     void Awake()
     {
         FindObjectsByType<Transition>(FindObjectsSortMode.None).FirstOrDefault(_ => reference = _);
-        popUpImage = FindObjectsByType<Image>(FindObjectsSortMode.None).FirstOrDefault(_ => _.name == "Angry Icon");
-        Angry.AddListener(() => StartCoroutine(TimerCoroutine(1)));
         maximumAmountDirt = Patient.reference.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > minimumFilth).ToList();
         Win.AddListener(() => reference.AddFunction(() => SceneManager.LoadScene("Win")));
         NoTimeLeft.AddListener(() => reference.AddFunction(() => SceneManager.LoadScene("Lose")));
@@ -50,18 +47,18 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
 
     void Update() => ScoreManager();
 
-    IEnumerator TimerCoroutine(float time)
-    {
-        _scoreTimer -= 5;
-        popUpImage.enabled = true;
-        yield return new WaitForSeconds(time);
-        popUpImage.enabled = false;
-    }
-
+    bool gotAngry = false;
     void ScoreManager()
     {
         progress = maximumAmountDirt.Count(_ => _.Amount <= minimumFilth) / (float)maximumAmountDirt.Count;
         scoreText.text = scoreTimer > 0 ? ((int)(difficultyMultiplier * scoreTimer)).ToString() : invokeNoTimeLeft();
+        if (scoreTimer < 60 && !gotAngry)
+        {
+            Angry.Invoke();
+            gotAngry = true;
+        }
+        if (scoreTimer > 65)
+            gotAngry = false;
         progressBar.value = progress;
         new Action(progress == 1 ? (Action)(() =>
         {
