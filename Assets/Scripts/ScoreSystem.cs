@@ -14,6 +14,10 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
     
     Transition reference;
     public UnityEvent Angry;
+    
+    [SerializeField]
+    GameObject HurryUp;
+    
     public UnityEvent Win;
     public UnityEvent NoTimeLeft;
     Func<string> invokeNoTimeLeft => _invokeNoTimeLeft ??= () =>
@@ -29,7 +33,8 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
     float _scoreTimer = 100;
     float progress;
 
-    public Image popUpImage;
+    [SerializeField]
+    GameObject popUpImage;
     Text scoreText => _scoreText ??= GetComponentInChildren<Text>(true);
     Text _scoreText;
     Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>(true);
@@ -41,21 +46,20 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
     void Awake()
     {
         FindObjectsByType<Transition>(FindObjectsSortMode.None).FirstOrDefault(_ => reference = _);
-        popUpImage = FindObjectsByType<Image>(FindObjectsSortMode.None).FirstOrDefault(_ => _.name == "Angry Icon");
         Angry.AddListener(() => StartCoroutine(TimerCoroutine(1)));
         maximumAmountDirt = Patient.reference.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > minimumFilth).ToList();
         Win.AddListener(() => reference.AddFunction(() => SceneManager.LoadScene("Win")));
         NoTimeLeft.AddListener(() => reference.AddFunction(() => SceneManager.LoadScene("Lose")));
-    } 
+    }
 
     void Update() => ScoreManager();
 
     IEnumerator TimerCoroutine(float time)
     {
-        _scoreTimer -= 5;
-        popUpImage.enabled = true;
+        _scoreTimer -= 2;
+        popUpImage.SetActive(true);
         yield return new WaitForSeconds(time);
-        popUpImage.enabled = false;
+        popUpImage.SetActive(false);
     }
 
     void ScoreManager()
@@ -63,6 +67,9 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
         progress = maximumAmountDirt.Count(_ => _.Amount <= minimumFilth) / (float)maximumAmountDirt.Count;
         scoreText.text = scoreTimer > 0 ? ((int)(difficultyMultiplier * scoreTimer)).ToString() : invokeNoTimeLeft();
         progressBar.value = progress;
+
+        HurryUp.SetActive(Convert.ToInt32(scoreText.text) <= 60);
+        
         new Action(progress == 1 ? (Action)(() =>
         {
             reference.StartTransition();

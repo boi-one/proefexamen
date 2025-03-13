@@ -63,6 +63,9 @@ public class Boor : Tool
         {
             aff.Amount -= 1f * Time.deltaTime;
             
+            if (aff.Amount == 0)
+                wrongDoing += Time.deltaTime * 3;
+            
             // particles
             e = true;
         }

@@ -1841,46 +1841,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1068608417538224819, guid: 046556032cd15ca41910381c886b0962, type: 3}
-      propertyPath: difficultyMultiplier
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068608417538224819, guid: 046556032cd15ca41910381c886b0962, type: 3}
-      propertyPath: Win.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068608417538224819, guid: 046556032cd15ca41910381c886b0962, type: 3}
-      propertyPath: NoTimeLeft.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068608417538224819, guid: 046556032cd15ca41910381c886b0962, type: 3}
-      propertyPath: Win.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068608417538224819, guid: 046556032cd15ca41910381c886b0962, type: 3}
-      propertyPath: NoTimeLeft.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068608417538224819, guid: 046556032cd15ca41910381c886b0962, type: 3}
-      propertyPath: NoTimeLeft.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068608417538224819, guid: 046556032cd15ca41910381c886b0962, type: 3}
-      propertyPath: NoTimeLeft.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068608417538224819, guid: 046556032cd15ca41910381c886b0962, type: 3}
-      propertyPath: NoTimeLeft.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartTransition
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068608417538224819, guid: 046556032cd15ca41910381c886b0962, type: 3}
-      propertyPath: NoTimeLeft.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Transition, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068608417538224819, guid: 046556032cd15ca41910381c886b0962, type: 3}
-      propertyPath: NoTimeLeft.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1331371260021339237, guid: 046556032cd15ca41910381c886b0962, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

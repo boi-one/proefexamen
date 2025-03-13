@@ -10,24 +10,12 @@ public class Toothbrush : Tool
 
         Debug.Log("Where we brushing boys");
         
-        
-        // OMNI TOOL
-        target.Afflictions.ToList().ForEach(_ =>
-        {
-            var pre = _.Amount;
-
-            // cleaning effect
-            
-            if (pre > 0 && _.Amount == 0)
-            {
-                // completed, spawn finish effect
-            }
-        });
-        
         // todo: when we got all the tools bring this back
-         if (target.Afflictions.FirstOrDefault(_ => _.Type == this.intendedType) is { } aff)
-         {
+        if (target.Afflictions.FirstOrDefault(_ => _.Type == this.intendedType) is { } aff)
+        { 
             aff.Amount -= Input.mousePositionDelta.magnitude / 5 * Time.deltaTime;
-         }
+            if (aff.Amount == 0)
+                wrongDoing += Time.deltaTime * 3;
+        }
     }
 }

@@ -33,7 +33,7 @@ public class Tool : MonoBehaviour
             
             _currentlySelectedTool = value;
         }
-    } static Tool _currentlySelectedTool;
+    } public static Tool _currentlySelectedTool;
 
     bool IsSelected
     {
@@ -52,10 +52,19 @@ public class Tool : MonoBehaviour
 
     [FormerlySerializedAs("afflictionType")] [FormerlySerializedAs("affliction")] public AfflictionType intendedType;
     
+    protected float wrongDoing = 0f;
+
     void Update()
     {
         if (!IsSelected) 
             return;
+        wrongDoing -= Time.deltaTime;
+        if (wrongDoing > 1f)
+        {
+            wrongDoing = 0;
+            ScoreSystem.reference.Angry.Invoke();
+        }
+        
 
         var screenToWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0,0,0.1f));
         foreach (var hit in Physics.RaycastAll(screenToWorldPoint, (screenToWorldPoint - Camera.main.transform.position).normalized))
