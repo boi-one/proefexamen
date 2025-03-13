@@ -49,10 +49,16 @@ public class SceneSwap : MonoBehaviour
         toMainGame.Invoke();
     }
     
-    public void SwitchToMainGame() 
+    public void SwitchToMainGameIntro()
     {
         WaitRoomCameraControls.staystill = true;
         EnterWaitingRoom();
+    }
+    
+    public void SwitchToMainGame() 
+    {
+        reference.StartTransition();
+        toMainGame.Invoke();
     } 
 
     public void SwitchToMainMenu()
