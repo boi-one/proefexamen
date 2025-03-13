@@ -4,9 +4,10 @@ public class WaitRoomCameraControls : SingletonMonobehaviour<WaitRoomCameraContr
 {
     [HideInInspector]
     public float yaw, pitch;
+    public static bool staystill = true;
     void Update()
     {
-        if (SwitchRoom.reference.operationRoomActive || !MainMenu.reference.startGame) return;
+        if (staystill) return;
         yaw += Input.mousePositionDelta.x;
         pitch -= Input.mousePositionDelta.y;
         pitch = Mathf.Clamp(pitch, -90f, 90f);
