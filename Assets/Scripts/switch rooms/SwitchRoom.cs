@@ -20,13 +20,7 @@ public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
     }
     bool _operationRoomActive = false;
 
-    public void EnterWaitingRoom()
-    {
-        MainMenu.reference.startGame = true;
-        UIManager.reference.AnouncementText.gameObject.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
-        StartCoroutine(TimerCoroutine());
-    }
+    
 
     public void EnterOperationRoom()
     {
@@ -43,19 +37,5 @@ public class SwitchRoom : SingletonMonobehaviour<SwitchRoom>
         operationRoom.SetActive(_operationRoomActive);
         mouth.SetActive(operationRoomActive);
         scoreSystem.SetActive(operationRoomActive);
-    }
-
-    IEnumerator TimerCoroutine()
-    {
-        for (int i = 5; i >= 0; i--)
-        {
-            UIManager.reference.AnouncementText.text = "Be ready, your patient is arriving\n";
-            UIManager.reference.AnouncementText.text += i.ToString();
-            yield return new WaitForSeconds(1);
-        }
-        Transition.reference.AddFunction(SwitchRooms);
-        Transition.reference.AddFunction(EnterOperationRoom);
-        Transition.reference.StartTransition();
-        Camera.main.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }
