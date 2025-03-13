@@ -30,12 +30,12 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
     float progress;
 
     public Image popUpImage;
-    Text scoreText => _scoreText ??= GetComponentInChildren<Text>();
+    Text scoreText => _scoreText ??= GetComponentInChildren<Text>(true);
     Text _scoreText;
-    Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>();
+    Slider progressBar => _progressBar ??= GetComponentInChildren<Slider>(true);
     Slider _progressBar;
     List<Affliction> maximumAmountDirt = new();
-    
+    float minimumFilth = 0.4f;
     #endregion
 
     void Awake()
@@ -43,7 +43,7 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
         FindObjectsByType<Transition>(FindObjectsSortMode.None).FirstOrDefault(_ => reference = _);
         popUpImage = FindObjectsByType<Image>(FindObjectsSortMode.None).FirstOrDefault(_ => _.name == "Angry Icon");
         Angry.AddListener(() => StartCoroutine(TimerCoroutine(1)));
-        maximumAmountDirt = Patient.reference.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > 0).ToList();
+        maximumAmountDirt = Patient.reference.Parts.SelectMany(_ => _.Afflictions).Where(_ => _.Amount > minimumFilth).ToList();
         Win.AddListener(() => reference.AddFunction(() => SceneManager.LoadScene("Win")));
         NoTimeLeft.AddListener(() => reference.AddFunction(() => SceneManager.LoadScene("Lose")));
     } 
@@ -60,7 +60,7 @@ public class ScoreSystem : SingletonMonobehaviour<ScoreSystem>
 
     void ScoreManager()
     {
-        progress = maximumAmountDirt.Count(_ => _.Amount == 0) / (float)maximumAmountDirt.Count;
+        progress = maximumAmountDirt.Count(_ => _.Amount <= minimumFilth) / (float)maximumAmountDirt.Count;
         scoreText.text = scoreTimer > 0 ? ((int)(difficultyMultiplier * scoreTimer)).ToString() : invokeNoTimeLeft();
         progressBar.value = progress;
         new Action(progress == 1 ? (Action)(() =>

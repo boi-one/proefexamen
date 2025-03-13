@@ -24,7 +24,7 @@ Shader "CUSTOM/Tooth"
             fixed4 _Color;
             sampler2D _CleanTex;
             sampler2D _DirtyTex;
-            Float _Dirtyness;   
+            float _Dirtyness;   
 
             struct appdata
             {

@@ -13,18 +13,12 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         reference = FindAnyObjectByType<T>();
         typeof(T).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance).First(_ => _.DeclaringType == typeof(T) && _.Name == "Awake")
             .Invoke(reference, new object[] { });
+        DontDestroyOnLoad(gameObject);
     }
 }
 
-
-public class Tool : Singleton<Tool> 
+public class Tool : MonoBehaviour 
 {
-    // WRONG!!!
-    void Awake()
-    {
-    }
-    
-    
     public static Tool CurrentlySelectedTool
     {
         get => _currentlySelectedTool;
@@ -32,10 +26,13 @@ public class Tool : Singleton<Tool>
         {
             if (_currentlySelectedTool == value)
                 return;
+            
             if (_currentlySelectedTool is not null)
                 _currentlySelectedTool.IsSelected = false;
             if (value is not null)
                 value.IsSelected = true;
+            
+            _currentlySelectedTool = value;
         }
     } static Tool _currentlySelectedTool;
 
@@ -80,6 +77,7 @@ public class Tool : Singleton<Tool>
     {
         if (whoLol.TryGetComponent<Part>(out var lol)) 
             Affect(lol);
+        print("aljksd");
     }
     
     protected virtual void Affect(Part target) { }
